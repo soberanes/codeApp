@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name='description' content='' />
+		<meta name='author' content='Protarget Estrategia Promocional' />
+		<meta name='keywords' content='' />
+		<title><?php echo title();?></title>
+		<link rel="stylesheet" href="<?= URL;?>/style/style.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" href="<?= URL;?>/style/reset.css" type="text/css" media="screen"/>
+	</head>
+	<body>
+		<div id='main-content'>
+		<div id='message-handler'></div>
+			<?php echo $content; ?>
+		</div>
+		<div id="overlay"></div>
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
+	<?php js_capture();?>
+	 window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '422878627759988', // App ID
+	      channelUrl : '//www.protarget.com.mx/targetpro/apps/codeApp/', // Channel File
+	      status     : true, // check login status
+	      cookie     : true, // enable cookies to allow the server to access the session
+	      xfbml      : true  // parse XFBML
+	    });
+	
+	    // Additional initialization code here
+	  };
+	
+	  // Load the SDK Asynchronously
+	  (function(d){
+	     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement('script'); js.id = id; js.async = true;
+	     js.src = "//connect.facebook.net/en_US/all.js";
+	     ref.parentNode.insertBefore(js, ref);
+	   }(document));
+	<?php js_end_capture(); ?>
+	<?php js_print(); ?>
+	</body>
+</html>

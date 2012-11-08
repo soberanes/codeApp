@@ -1,0 +1,12 @@
+<div id="content">
+	<?php 
+		if(!$user){
+			echo $log;
+		}else{
+	?>
+		<form name="f1" action="index/post" method="POST">
+			<input type="text" class="code" name="message" placeholder="Escribe algo" />
+			<input type="submit" class="submit" name="submit" value="Postear en facebook" />
+		</form>
+	<?php } ?>
+</div>
